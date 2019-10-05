@@ -24,8 +24,7 @@ def calc(pick_score_q1,pick_score_q2,pick_score_q3):
 app.layout = html.Div(children=[
     html.H1(myheading1),
     html.Div([
-        html.Div([
-            html.H6(q_1)
+            html.H6(q_1),
             dcc.Dropdown(
                 id='pick_score_q1',
                 options=[
@@ -36,8 +35,8 @@ app.layout = html.Div(children=[
                         {'label':responses[4], 'value':responses[4]},
                         ],
                 value='',
-                )
-            html.H6(q_1)
+                ),
+            html.H6(q_1),
             dcc.Dropdown(
                 id='pick_score_q2',
                 options=[
@@ -48,8 +47,8 @@ app.layout = html.Div(children=[
                         {'label':responses[4], 'value':responses[4]},
                         ],
                 value='',
-                )
-            html.H6(q_1)
+                ),
+            html.H6(q_1),
             dcc.Dropdown(
                 id='pick_score_q3',
                 options=[
@@ -64,5 +63,10 @@ app.layout = html.Div(children=[
         ]
 
 @app.callback(Output('your_output_here', 'children'),
-              [Input('pick_score_q1', 'value')])
-print(f'Country risk score is {score}')
+              [Input('pick_score_q1', 'value')]),
+html.H2(score)
+
+
+
+if __name__ == '__main__':
+    app.run_server()
