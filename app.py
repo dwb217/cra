@@ -6,12 +6,6 @@ from dash.dependencies import Input, Output, State
 
 myheading1 = 'Risk Assessment Tool'
 q_1='What is the likelihood of coup or extra-constitutional change?'
-q_2='How legitimate is the government?'
-q_3='How significant is wealth disparity in the country?'
-q_4='How great a risk is terrorism?'
-q_5='Are foreign companies and/or individuals are particular risk?'
-
-note='1 is low or strong no; 5 is high or strong yes.'
 
 responses=[1,2,3,4,5]
 
@@ -34,12 +28,7 @@ app.layout = html.Div(children=[
 
 @app.callback(Output('your_output_here', 'children'),
               [Input('pick_score_q1', 'value')]),
-html.H2(score)
-def calc(pick_score_q1,pick_score_q2,pick_score_q3):
-    score = 0
-    for x in score:
-        score +=x/len(args)
-    return score
+html.H2(pick_score_q1)
 
 
 if __name__ == '__main__':
